@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9B32DC42-9843-4799-93E5-9BED5A5EBB15}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Projeto3Camadas</RootNamespace>
+    <AssemblyName>Projeto3Camadas</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>PRO-SAUDE logotipo versao3_Prancheta 1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotLiquid, Version=2.0.325.0, Culture=neutral, PublicKeyToken=82e46016ecf9f07c, processorArchitecture=MSIL">
+      <HintPath>packages\DotLiquid.2.0.325\lib\net45\DotLiquid.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\BLL\ClienteBLLSQL.cs" />
+    <Compile Include="Code\BLL\ClienteBLL.cs" />
+    <Compile Include="Code\DAL\AcessoBancoDados.cs" />
+    <Compile Include="Code\DAL\AcessoBancodeDadosSQLSERVER.cs" />
+    <Compile Include="Code\DTO\ClienteDTO.cs" />
+    <Compile Include="frm_sql.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_sql.Designer.cs">
+      <DependentUpon>frm_sql.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_login.designer.cs">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCadastroUsuarioSQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadastroUsuarioSQL.Designer.cs">
+      <DependentUpon>frmCadastroUsuarioSQL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlteraSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlteraSenha.Designer.cs">
+      <DependentUpon>frmAlteraSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCadastroUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadastroUsuarios.Designer.cs">
+      <DependentUpon>frmCadastroUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_configbd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_configbd.designer.cs">
+      <DependentUpon>frm_configbd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCadastroUsuarioSQL.pt-BR.resx">
+      <DependentUpon>frmCadastroUsuarioSQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCadastroUsuarioSQL.zu.resx">
+      <DependentUpon>frmCadastroUsuarioSQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_login.resx">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCadastroUsuarioSQL.resx">
+      <DependentUpon>frmCadastroUsuarioSQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlteraSenha.resx">
+      <DependentUpon>frmAlteraSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCadastroUsuarios.resx">
+      <DependentUpon>frmCadastroUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_configbd.resx">
+      <DependentUpon>frm_configbd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_sql.resx">
+      <DependentUpon>frm_sql.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login escuro.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\configuration_250.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PRO-SAUDE logotipo versao3_Prancheta 1.ico" />
+    <None Include="Resources\PapelParede.png" />
+    <Content Include="Resources\PRO-SAUDE logotipo versao1_Prancheta 1.ico" />
+    <Content Include="Resources\PRO-SAUDE logotipo versao2_Prancheta 1.ico" />
+    <Content Include="Resources\PRO-SAUDE logotipo versao3_Prancheta 1.ico" />
+    <Content Include="Resources\PRO-SAUDE logotipo versao4_Prancheta 1.ico" />
+    <Content Include="Resources\PRO-SAUDE logotipo versao5_Prancheta 1.ico" />
+    <Content Include="Resources\PRO-SAUDE logotipo versao6_Prancheta 1.ico" />
+    <Content Include="Resources\PRO-SAUDE logotipo versao7_Prancheta 1.ico" />
+    <Content Include="Resources\PRO-SAUDE logotipo versao8_Prancheta 1.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
